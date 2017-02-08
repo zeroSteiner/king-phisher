@@ -1,8 +1,10 @@
 # Install ![GitHub Downloads][downloads-status]
-## TLDR Windows Install
-Only King Phisher Client is supported on windows.
-Download the Latest MSI from the releases page.
-- [Releases page][releases]
+King Phisher Server is only supported on Linux. King Phisher Client is supported on Windows and Linux.
+
+[Supported Linux Operating Systems][operating-systems]
+
+For Windows Download the [Latest Release Here][releases]
+
 ## TLDR Linux Install
 This is for Quick Reference, for additional information read [Linux Install Steps](#linux-install-steps).
 
@@ -15,7 +17,7 @@ After installing, for instructions on how to get started:
 - visit the [wiki][wiki]
 - watch the [how to videos][videos]
 
-## Kali Rolling
+### Kali Rolling
 `sudo apt install king-phisher`
 To upgrade on Kali Rolling
 ```bash
@@ -23,7 +25,7 @@ apt update
 apt upgrade
 ```
 
-## For other supported Linux versions
+### Supported Linux OS
 *NOTE you can install King Phisher with this method on Kali Rolling for the latest release.
 ```bash
 cd /opt/
