@@ -1,38 +1,35 @@
 # Install ![GitHub Downloads][downloads-status]
-The King Phisher Server is only supported on Linux. The King Phisher
-Client is supported on both Windows and Linux. Windows executables are
-available from the [releases page][releases].
-
-An installation script is available to automate the process on supported
-versions of Linux. Instructions on how it can be used are
-[Linux Install Steps](#linux-install-steps) section. It is highly recommended
-that users ensure that the system clock and timezone are set accurately on both
-the client and server.
-
-# TLDR Linux Install
+## TLDR Windows Install
+Only King Phisher Client is supported on windows.
+Download the Latest MSI from the releases page.
+- [Releases page][releases]
+## TLDR Linux Install
 This is for Quick Reference, for additional information read [Linux Install Steps](#linux-install-steps).
-TLDR only supports [These Operating Systems](###Install Script Supported Flavors).
-Before installing make sure you have the [minimum requirements](####Recommended Minimum Requirements).
+
+- TLDR only supports [These Operating Systems][operating-systems].
+- Before installing make sure you have the [minimum requirements][minimum-req].
 
 Go here to be on the [Bleeding Edge as a Beta Tester][beta-testing]
 
-After installing, for instructions on how to get started please see the
-[wiki][wiki]
+After installing, for instructions on how to get started:
+- visit the [wiki][wiki]
+- watch the [how to videos][videos]
+
 ## Kali Rolling
 `sudo apt install king-phisher`
-To upgrade on kali linux
+To upgrade on Kali Rolling
 ```bash
 apt update
 apt upgrade
 ```
 
 ## For other supported Linux versions
-*NOTE You can install via this method on Kali Rolling for the cutting edge
+*NOTE you can install King Phisher with this method on Kali Rolling for the latest release.
 ```bash
 cd /opt/
 sudo git clone https://github.com/securestate/king-phisher.git
 cd king-phisher
-sudo tools/install.sh
+sudo tools/install.sh # select y for postgres install
 # get a cup of coffee this going to take a minute
 ```
 
@@ -52,12 +49,22 @@ To upgrade
 cd /opt/king-phisher
 sudo git fetch origin
 sudo git pull
-sudo tools/install.sh
+sudo tools/install.sh # select y for postgres install.
 # get a cup of coffee this will take a minute
 sudo cp server_config.yml.bck server_config.yml
 ```
 
 ## Overview
+The King Phisher Server is only supported on Linux. The King Phisher
+Client is supported on both Windows and Linux. Windows executables are
+available from the [releases page][releases].
+
+An installation script is available to automate the process on supported
+versions of Linux. Instructions on how it can be used are
+[Linux Install Steps](#linux-install-steps) section. It is highly recommended
+that users ensure that the system clock and timezone are set accurately on both
+the client and server.
+
 King Phisher uses a client server architecture. The ```KingPhisherServer```
 application runs as a daemon on the phishing server. The ```KingPhisher```
 client file is meant to connect to the daemon over SSH from a remote system. The
@@ -153,5 +160,8 @@ installation of these libraries for the supported flavors of Linux.
 
 [beta-testing]: https://github.com/securestate/king-phisher/wiki/Updating-King-Phisher#beta-testing
 [downloads-status]: https://img.shields.io/github/downloads/securestate/king-phisher/total.svg?style=flat-square
+[minimum-req]: https://github.com/securestate/king-phisher/blob/installmd_update/INSTALL.md#recommended-minimum-requirements
+[operating-systems]: https://github.com/securestate/king-phisher/blob/installmd_update/INSTALL.md#install-script-supported-flavors
 [releases]: https://github.com/securestate/king-phisher/releases
+[videos]: https://securestate.wistia.com/projects/laevqz2p29
 [wiki]: https://github.com/securestate/king-phisher/wiki
