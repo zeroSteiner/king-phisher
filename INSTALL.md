@@ -1,13 +1,61 @@
-# Install
+# Install ![GitHub Downloads][downloads-status]
 The King Phisher Server is only supported on Linux. The King Phisher
 Client is supported on both Windows and Linux. Windows executables are
-available from the [releases page](https://github.com/securestate/king-phisher/releases).
+available from the [releases page][releases].
 
 An installation script is available to automate the process on supported
 versions of Linux. Instructions on how it can be used are
 [Linux Install Steps](#linux-install-steps) section. It is highly recommended
 that users ensure that the system clock and timezone are set accurately on both
 the client and server.
+
+# TLDR Linux Install
+This is for Quick Reference, for additional information read [Linux Install Steps](#linux-install-steps).
+TLDR only supports [These Operating Systems](###Install Script Supported Flavors).
+Before installing make sure you have the [minimum requirements](####Recommended Minimum Requirements).
+
+Go here to be on the [Bleeding Edge as a Beta Tester][beta-testing]
+
+After installing, for instructions on how to get started please see the
+[wiki][wiki]
+## Kali Rolling
+`sudo apt install king-phisher`
+To upgrade on kali linux
+```bash
+apt update
+apt upgrade
+```
+
+## For other supported Linux versions
+*NOTE You can install via this method on Kali Rolling for the cutting edge
+```bash
+cd /opt/
+sudo git clone https://github.com/securestate/king-phisher.git
+cd king-phisher
+sudo tools/install.sh
+# get a cup of coffee this going to take a minute
+```
+
+To start the King Phisher Server
+
+upstart `sudo service start king-phisher`
+
+systemctl `sudo systemctl start king-phisher`
+
+To start the King Phisher Client
+```bash
+cd /opt/king-phisher
+./KingPhisher
+```
+To upgrade
+```bash
+cd /opt/king-phisher
+sudo git fetch origin
+sudo git pull
+sudo tools/install.sh
+# get a cup of coffee this will take a minute
+sudo cp server_config.yml.bck server_config.yml
+```
 
 ## Overview
 King Phisher uses a client server architecture. The ```KingPhisherServer```
@@ -45,7 +93,7 @@ install script will use the template configuration file which specifies SQLite
 as the database backend. It is highly recommended that PostgreSQL be used over
 SQLite to support future database upgrades. For more information on selecting
 and configuring a database backend, please see the
-[wiki page](https://github.com/securestate/king-phisher/wiki/Database).
+[wiki][wiki].
 
 ### Install Script Supported Flavors
 | Linux Flavor | Client Support | Server Support |
@@ -101,3 +149,9 @@ All required packages are listed in the provided ```requirements.txt``` file to
 be easily installed with pip. Some packages may not install correctly due to
 missing native libraries. The automated install script will handle the
 installation of these libraries for the supported flavors of Linux.
+
+
+[beta-testing]: https://github.com/securestate/king-phisher/wiki/Updating-King-Phisher#beta-testing
+[downloads-status]: https://img.shields.io/github/downloads/securestate/king-phisher/total.svg?style=flat-square
+[releases]: https://github.com/securestate/king-phisher/releases
+[wiki]: https://github.com/securestate/king-phisher/wiki
