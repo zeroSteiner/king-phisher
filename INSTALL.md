@@ -12,7 +12,33 @@ Visit the [wiki][wiki] or watch a [how to videos][videos] while you wait for the
 
 The one liner install will install King Phisher to `/opt/king-phisher`.
 
-### Advanced Install Options
+## Quick Advanced Install Options
+Just the King Phisher Client
+```bash
+wget -q https://github.com/securestate/king-phisher/raw/master/tools/install.sh && sudo bash ./install.sh --skip-server
+```
+Just the King Phisher Server
+```bash
+wget -q https://github.com/securestate/king-phisher/raw/master/tools/install.sh && sudo bash ./install.sh --skip-client
+```
+
+## More Control Cloning and install from GitHub
+All the things
+```bash
+cd /opt/ # or your directory of choice
+sudo git clone https://github.com/securestate/king-phisher.git
+cd king-phisher 
+sudo tools/install.sh # Highly recommended Yes for Postgres install
+# get a cup of coffee this going to take a minute
+```
+Just the King Phisher Server
+```bash
+cd /opt/ # or your directory of choice
+sudo git clone https://github.com/securestate/king-phisher.git
+cd king-phisher 
+sudo tools/install.sh --skip-client # Highly recommended Yes for Postgres install
+# get a cup of coffee this going to take a minute
+```
 Just the King Phisher Client
 ```bash
 cd /opt/
@@ -21,26 +47,9 @@ cd king-phisher
 sudo tools/install.sh --skip-server
 # get a cup of coffee this going to take a minute
 ```
-
-Just the King Phisher Server
-```bash
-cd /opt/
-sudo git clone https://github.com/securestate/king-phisher.git
-cd king-phisher 
-sudo tools/install.sh --skip-client # Highly recommended Yes for Postgres install
-# get a cup of coffee this going to take a minute
-```
-
-Both
-```bash
-cd /opt/
-sudo git clone https://github.com/securestate/king-phisher.git
-cd king-phisher 
-sudo tools/install.sh # Highly recommended Yes for Postgres install
-# get a cup of coffee this going to take a minute
-```
-
 ## Quick Links for Important Information
+- [wiki][wiki]
+- [how to videos][videos]
 - [Supported Linux Operating Systems][operating-systems]
 - [Minimum System Requirements][minimum-req]
 - [README][readme]
