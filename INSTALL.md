@@ -1,60 +1,50 @@
 # Install ![GitHub Downloads][downloads-status]
 King Phisher Server is only supported on Linux. King Phisher Client is supported on Windows and Linux.
 
-[Supported Linux Operating Systems][operating-systems]
-
+Installing King Phisher is easy.
 For Windows Download the [Latest Release Here][releases]
 
-## TLDR Linux Install
-This is for Quick Reference, for additional information read [Linux Install Steps](#linux-install-steps).
-
-- TLDR only supports [These Operating Systems][operating-systems].
-- Before installing make sure you have the [minimum requirements][minimum-req].
-
-Go here to be on the [Bleeding Edge as a Beta Tester][beta-testing]
-
-After installing, for instructions on how to get started:
-- visit the [wiki][wiki]
-- watch the [how to videos][videos]
-
-### Kali Rolling
-`sudo apt install king-phisher`
-To upgrade on Kali Rolling
+For quick install on [Supported Linux Operating Systems][operating-systems]
 ```bash
-apt update
-apt upgrade
+wget -q https://github.com/securestate/king-phisher/raw/master/tools/install.sh && sudo bash ./install.sh
 ```
+Visit the [wiki][wiki] or watch a [how to videos][videos] while you wait for the install complete.
 
-### Supported Linux OS
-*NOTE you can install King Phisher with this method on Kali Rolling for the latest release.
+The one liner install will install King Phisher to `/opt/king-phisher`.
+
+### Advanced Install Options
+Just the King Phisher Client
 ```bash
 cd /opt/
 sudo git clone https://github.com/securestate/king-phisher.git
-cd king-phisher
-sudo tools/install.sh # select y for postgres install
+cd king-phisher 
+sudo tools/install.sh --skip-server
 # get a cup of coffee this going to take a minute
 ```
 
-To start the King Phisher Server
-
-upstart `sudo service start king-phisher`
-
-systemctl `sudo systemctl start king-phisher`
-
-To start the King Phisher Client
+Just the King Phisher Server
 ```bash
-cd /opt/king-phisher
-./KingPhisher
+cd /opt/
+sudo git clone https://github.com/securestate/king-phisher.git
+cd king-phisher 
+sudo tools/install.sh --skip-client # Highly recommended Yes for Postgres install
+# get a cup of coffee this going to take a minute
 ```
-To upgrade
+
+Both
 ```bash
-cd /opt/king-phisher
-sudo git fetch origin
-sudo git pull
-sudo tools/install.sh # select y for postgres install.
-# get a cup of coffee this will take a minute
-sudo cp server_config.yml.bck server_config.yml
+cd /opt/
+sudo git clone https://github.com/securestate/king-phisher.git
+cd king-phisher 
+sudo tools/install.sh # Highly recommended Yes for Postgres install
+# get a cup of coffee this going to take a minute
 ```
+
+## Quick Links for Important Information
+- [Supported Linux Operating Systems][operating-systems]
+- [Minimum System Requirements][minimum-req]
+- [README][readme]
+- [Bleeding Edge as a Beta Tester][beta-testing]
 
 ## Overview
 The King Phisher Server is only supported on Linux. The King Phisher
@@ -153,7 +143,7 @@ Install each of the required packages with
 likely missing libraries that will need to be installed through the native
 package manager.
 
-## Required Packages
+## Required Python Packages
 All required packages are listed in the provided ```requirements.txt``` file to
 be easily installed with pip. Some packages may not install correctly due to
 missing native libraries. The automated install script will handle the
@@ -164,6 +154,7 @@ installation of these libraries for the supported flavors of Linux.
 [downloads-status]: https://img.shields.io/github/downloads/securestate/king-phisher/total.svg?style=flat-square
 [minimum-req]: https://github.com/securestate/king-phisher/blob/installmd_update/INSTALL.md#recommended-minimum-requirements
 [operating-systems]: https://github.com/securestate/king-phisher/blob/installmd_update/INSTALL.md#install-script-supported-flavors
+[readme]: https://github.com/securestate/king-phisher/blob/master/README.md
 [releases]: https://github.com/securestate/king-phisher/releases
 [videos]: https://securestate.wistia.com/projects/laevqz2p29
 [wiki]: https://github.com/securestate/king-phisher/wiki
