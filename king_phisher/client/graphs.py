@@ -395,11 +395,11 @@ class CampaignGraph(GraphBase):
 								id
 								messageId
 								campaignId
-								visitCount
-								visitorIp
-								visitorDetails
-								firstVisit
-								lastVisit
+								count
+								ip
+								firstSeen
+								lastSeen
+								userAgent
 							}
 						}
 					}
