@@ -588,7 +588,6 @@ class CampaignGraphDepartmentComparison(CampaignBarGraph):
 	table_subscriptions = ('company_departments', 'messages', 'visits')
 	yticklabel_fmt = "{0:.01f}%"
 	def _load_graph(self, info_cache):
-		campaign_id = self.config['campaign_id']
 		departments = info_cache['companyDepartments']
 		departments = dict((department['node']['id'], department['node']['name']) for department in departments['edges'])
 
